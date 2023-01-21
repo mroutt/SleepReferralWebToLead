@@ -6,26 +6,48 @@
     <body onload="init()">        
         <div class="form-container">
             
-            <h2 class="form-title">Sleep Referral Questionnaire</h2>
+            <h2 class="form-title">Sleep Referral Request</h2>
 
-            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" onsubmit="return beforeSubmit()">
             
                 <input type=hidden name="oid" value="00DDn000009RiEx">
                 
-                <div id="div1">
+                <div id="div1" class="nav">
+                    <h2>Provider Information</h2>
+                    <label for="company">Name</label>
+                    <input  id="company" maxlength="40" name="company" size="20" type="text" /><br>
+                    <label for="Provider_Number__c">Provider Number</label>
+                    <input  id="Provider_Number__c" maxlength="16" name="Provider_Number__c" size="20" type="text" />
+                    <label for="email">Email</label>
+                    <input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+                    <label for="phone">Phone</label>
+                    <input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+                    <label for="fax">Fax</label>
+                    <input id="fax" maxlength="40" name="fax" size="20" type="text" /><br>
+                </div>
+
+                <div id="div2" class="nav">
+                    <h2>Provider Information Continued</h2>
+                    <label for="street">Street Address</label>
+                    <textarea name="street"></textarea><br>
+                    <label for="city">City</label>
+                    <input  id="city" maxlength="40" name="city" size="20" type="text" /><br>
+                    <label for="state">State</label>
+                    <input  id="state" maxlength="20" name="state" size="20" type="text" />
+                    <label for="zip">Postcode</label>
+                    <input  id="zip" maxlength="20" name="zip" size="20" type="text" /><br>
+                </div>
+
+
+                <div id="div3" class="nav">
+                    <h2>Patient Details</h2>
                     <label for="first_name">First Name</label>
                     <input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>               
                     <label for="last_name">Last Name</label>
-                    <input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>                                    
-                </div>
-
-                <div id="div2">
-                    <label for="email">Email</label>
-                    <input  id="email" maxlength="80" name="email" size="20" type="text" /><br>      
-                    <label for="city">City</label>
-                    <input  id="city" maxlength="40" name="city" size="20" type="text" /><br>
-                    <label for="state">State/Province</label>
-                    <input  id="state" maxlength="20" name="state" size="20" type="text" />
+                    <input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>        
+                    
+                    <label for="Date_of_Birth__c">Date of Birth</label>
+                    <input  id="Date_of_Birth__c" name="Date_of_Birth__c" size="12" type="text" />  
                 </div>
                 
                 <button class="left-justify" type="button" id="prevButton" onclick="prevPage()">Previous</button>

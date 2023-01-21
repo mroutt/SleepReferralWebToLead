@@ -1,23 +1,44 @@
 let currentPageIndex;
+let navElements;
+let prevButton;
+let nextButton;
+let submitButton;
 
 function init() {
+
     currentPageIndex = 0;
+    navElements = Array.from(document.getElementsByClassName('nav'));
+
+    prevButton = document.getElementById("prevButton");
+    nextButton = document.getElementById("nextButton");
+    submitButton = document.getElementById("submitButton");
+
     showProperDiv();
 }
 
 function showProperDiv() {
+    
+    for(let i = 0; i < navElements.length; i++) {
+
+        if(i == currentPageIndex) {
+            navElements[i].style.display = "";
+        } else {
+            navElements[i].style.display = "none";
+        }        
+    }
+
     if(currentPageIndex == 0) {
-        document.getElementById("div1").style.display = "";
-        document.getElementById("div2").style.display = "none";
-        document.getElementById("prevButton").style.display = "none";
-        document.getElementById("nextButton").style.display = "";
-        document.getElementById("submitButton").style.display = "none";
+        prevButton.style.display = "none";
+        nextButton.style.display = "";
+        submitButton.style.display = "none";
+    } else if (currentPageIndex == (navElements.length - 1)) {
+        prevButton.style.display = "";
+        nextButton.style.display = "none";
+        submitButton.style.display = "";  
     } else {
-        document.getElementById("div1").style.display = "none";
-        document.getElementById("div2").style.display = "";      
-        document.getElementById("prevButton").style.display = "";
-        document.getElementById("nextButton").style.display = "none";
-        document.getElementById("submitButton").style.display = "";
+        prevButton.style.display = "";
+        nextButton.style.display = "";
+        submitButton.style.display = "none";  
     }
 }
 
@@ -29,4 +50,7 @@ function nextPage() {
 function prevPage() {
     currentPageIndex--;
     showProperDiv();
+}
+
+function beforeSubmit() {
 }

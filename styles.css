@@ -53,6 +53,23 @@ input[type="submit"]:hover {
   background-color: #45a049;
 }
 
+input[type='radio'] {
+  display: inline-block;
+  float: left;
+  margin: 10px;
+}
+
+.header-label{
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+
+.survey-label{
+  margin: 10px;
+  text-align: left;
+}
+
 /* Form error messages */
 .error {
   color: red;
@@ -65,3 +82,22 @@ input[type="submit"]:hover {
 .left-justify {
   float: left;
 }
+
+.one-col-div {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: 20px;
+}
+
+.two-col-div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+}
+
+.four-col-div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 20px;
+}
+

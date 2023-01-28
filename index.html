@@ -10,7 +10,8 @@
 
             <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" onsubmit="return beforeSubmit()">
             
-                <input type=hidden name="oid" value="00DDn000009RiEx">
+                <input type=hidden name="oid" value="00DDn00000C0Iug">
+                <input type=hidden name="recordType" id="recordType" value="Sleep_Referral_Lead">
                 
                 <div class="nav">
                     <h2>Provider Information</h2>
@@ -44,16 +45,16 @@
                     <input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>               
                     <label for="last_name">Last Name</label>
                     <input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>                            
-                    <label for="Date_of_Birth__c">Date of Birth</label>
-                    <input  id="Date_of_Birth__c" name="Date_of_Birth__c" size="12" type="text" />  
+                    <label for="Patient_Date_of_Birth__c">Date of Birth</label>
+                    <input  id="Patient_Date_of_Birth__c" name="Patient_Date_of_Birth__c" size="12" type="text" />  
                     <label for="Patient_Phone__c">Phone</label>
                     <input  id="Patient_Phone__c" maxlength="40" name="Patient_Phone__c" size="20" type="text" /><br>
 
-                    <label for="Language__c">Language Spoken</label>
-                    <input  id="Language__c" maxlength="32" name="Language__c" size="20" type="text" /><br>
+                    <label for="Patient_Language__c">Language Spoken</label>
+                    <input  id="Patient_Language__c" maxlength="32" name="Patient_Language__c" size="20" type="text" /><br>
 
-                    <label for="Gender__c">Gender</label>
-                    <select  id="Gender__c" name="Gender__c">
+                    <label for="Patient_Gender__c">Gender</label>
+                    <select  id="Patient_Gender__c" name="Patient_Gender__c">
                         <option value="">--None--</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -62,25 +63,59 @@
 
                 <div class="nav">
                     <h2>Patient Details Continued</h2>
-                    <label for="Medicare_Number__c">Medicare Number</label>
-                    <input  id="Medicare_Number__c" maxlength="16" name="Medicare_Number__c" size="20" type="text" /><br>
+                    <label for="Patient_Medicare_Number__c">Medicare Number</label>
+                    <input  id="Patient_Medicare_Number__c" maxlength="16" name="Patient_Medicare_Number__c" size="20" type="text" /><br>
 
-                    <label for="Medicare_Expiration_Date__c">Medicare Expiration Date</label>
+                    <label for="Patient_Medicare_Expiration_Date__c">Medicare Expiration Date</label>
                     <span class="dateInput dateOnlyInput">
                         <input  id="Medicare_Expiration_Date__c" name="Medicare_Expiration_Date__c" size="12" type="text" />
                     </span><br>
 
+                    <label for="Medicare_Reference_Number__c">Medicare Reference Number</label>
+                    <input  id="Medicare_Reference_Number__c" maxlength="16" name="Medicare_Reference_Number__c" size="20" type="text" /><br>
+
                     <label for="Referral_Reason__c">Referral Reason</label>
                     <input  id="Referral_Reason__c" maxlength="128" name="Referral_Reason__c" size="20" type="text" /><br>
 
-                    <label for="Service__c">Service</label>
-                    <select  id="Service__c" name="Service__c" title="Service">
+                    <label for="Referral_Service__c">Service</label>
+                    <select  id="Referral_Service__c" name="Referral_Service__c" title="Service">
                         <option value="">--None--</option>
                         <option value="Medicare-funded sleep study">Medicare-funded sleep study</option>
                         <option value="Physician Consult (NSW only)">Physician Consult (NSW only)</option>
                         <option value="Patient-funded sleep study">Patient-funded sleep study</option>
                         <option value="CPAP treatment">CPAP treatment</option>
                     </select><br>
+                </div>
+
+                <div class="nav">
+                    <h2>Epworth Survey</h2>
+                    <div class="two-col-div">
+                        <div class="one-col-div">
+                            <label class="survey-label"></label>
+                            <label class="survey-label">Sitting and Reading</label>
+                            <label class="survey-label">Watching TV</label>
+                        </div>
+                        <div>
+                            <div class="four-col-div">
+                                <label class="header-label">Never</label>
+                                <label class="header-label">Slight</label>
+                                <label class="header-label">Moderate</label>
+                                <label class="header-label">High</label>                        
+                            </div>
+                            <div class="four-col-div">
+                                <input type="radio" id="ep-sit-read-1" name="ep-sit-read"/>
+                                <input type="radio" id="ep-sit-read-2" name="ep-sit-read"/>
+                                <input type="radio" id="ep-sit-read-3" name="ep-sit-read"/>
+                                <input type="radio" id="ep-sit-read-4" name="ep-sit-read"/>
+                            </div>
+                            <div class="four-col-div">
+                                <input type="radio" id="ep-watch-tv-1" name="watching-tv"/>
+                                <input type="radio" id="ep-watch-tv-2" name="watching-tv"/>
+                                <input type="radio" id="ep-watch-tv-3" name="watching-tv"/>
+                                <input type="radio" id="ep-watch-tv-4" name="watching-tv"/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
                 <br>
